@@ -1,20 +1,178 @@
-
-.header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-  }
-
-  .header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-
-
-  .header nav a {
-    color: white;
-    text-decoration: none;
+/* Reusable container class */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
   }
   
-
+  /* Header styles */
+  .header {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+  }
+  
+  /* Logo styles */
+  .logo img {
+    height: 50px;
+    display: block;
+  }
+  
+  /* Navigation styles */
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: red;
+    font-weight: 500;
+    padding: var(--spacing-sm) 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover {
+    color: gray
+  }
+  
+  .dropdown-icon {
+    font-size: 0.8em;
+    transition: var(--transition);
+  }
+  
+  .has-dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+  }
+  
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    position: relative;
+    transition: var(--transition);
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    transition: var(--transition);
+  }
+  
+  .hamburger::before {
+    top: -8px;
+  }
+  
+  .hamburger::after {
+    bottom: -8px;
+  }
+  
+  .hamburger.active {
+    background: transparent;
+  }
+  
+  .hamburger.active::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .hamburger.active::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 968px) {
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .main-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg-color);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+  
+    .main-nav.active {
+      max-height: 500px;
+      padding: var(--spacing-md) 0;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      padding: 0 var(--spacing-md);
+    }
+  
+    .nav-link {
+      padding: var(--spacing-sm);
+    }
+  
+    .has-dropdown .nav-link {
+      justify-content: space-between;
+    }
+  }
+  
+  /* Active states */
+  .nav-link.active {
+    color: var(--primary-color);
+  }
+  
+  /* Animation classes */
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+  }

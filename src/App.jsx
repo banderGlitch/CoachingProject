@@ -1,13 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './Layout' 
 import './styles/MainApp.css'
+import Home from './pages/Home'
 function App() {
 
   return (
     <div className='app-container'>
-      <Layout>
-        <Main />
-      </Layout>
+      <Router>
+        <Layout>
+          <Main />
+        </Layout>
+      </Router>
     </div>
   )
 }
@@ -18,13 +21,11 @@ export default App
 const Main = () => {
   return (
     <div>
-      <Router>
         <main className='main-container'>
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Home />} />
           </Routes>
         </main>
-      </Router>
-    </div>
+      </div>
   )
 }
