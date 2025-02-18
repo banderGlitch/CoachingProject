@@ -17,7 +17,7 @@ const HeroSlider = () => {
   ];
 
   return (
-    <section className="hero-slider">
+    <section className="hero-slider" role="region" data-testid="hero-slider">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={0}
@@ -30,16 +30,17 @@ const HeroSlider = () => {
         }}
         loop={true}
         className="mySwiper"
+        data-testid="swiper-container"
       >
         {sliderImages.map((image, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} data-testid="swiper-slide">
             <div className="slide-content">
               <img src={image} alt={`Slide ${index + 1}`} />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </section>    
   );
 };
 

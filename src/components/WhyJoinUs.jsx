@@ -58,11 +58,11 @@ const WhyJoinUs = () => {
   ];
 
   return (
-    <section className="why-join-section">
+    <section className="why-join-section" role="region">
       <h2 className="section-title">Why should you join L-1</h2>
       <div className="features-container">
         {features.map((feature, index) => (
-          <div className="feature-card" key={index}>
+          <div className="feature-card" key={index} data-testid="feature-card">
             <div className="feature-icon">
               <img src={feature.icon} alt={feature.title} />
             </div>
