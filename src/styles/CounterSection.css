@@ -1,0 +1,73 @@
+.counter-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .counter-item {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .counter-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  
+  .plus {
+    font-size: 2.5rem;
+    margin-left: 2px;
+  }
+  
+  .counter-label {
+    color: #800000;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .counter-underline {
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    margin: 0.5rem auto 1rem;
+  }
+  
+  .counter-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .counter-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .counter-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .counter-number {
+      font-size: 3rem;
+    }
+  
+    .counter-label {
+      font-size: 1.25rem;
+    }
+  }
